@@ -1,5 +1,8 @@
 from recommend import myrecommend
 
+from dotenv import load_dotenv
+import os
+
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -77,9 +80,14 @@ async def recommend(request: Request, book: str):
     if len(books) < 2:
         return f"{books}"
     
+    # Load environment variables from .env file
+    load_dotenv()
+
     # Google Custom Search API key and search engine ID
-    google_api_key = "AIzaSyDSceE49rPjkOhwxTfmC5Vw0FegykrxOzw"
-    search_engine_id = "d3d2c739e48a8428d"
+    google_api_key = os.getenv("google_api_key")
+
+    search_engine_id = os.getenv("search_engine_id")
+
 
     image_urls = {}
     for b in books:
