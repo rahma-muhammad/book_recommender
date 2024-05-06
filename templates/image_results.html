@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Recommend Books</title>
+        <link rel="stylesheet" type="text/css" href="{{ css_file }}">
+        <link rel="icon" href="{{ icon }}" type="image/x-icon">
+    </head>    
+<body>
+    <h1>Recommended Books</h1>
+    <p>Books similar for: {{ book }}</p>
+    <div class="image-grid">
+        {% for name, image_url in image_urls.items() %}
+            <div class="image-item">
+                {% if image_url == 'XXXX' %}
+                    <img src="{{ notfound }}" alt="Not found">
+                {% else %}
+                    <img src="{{ image_url }}" alt="{{ name }}">
+                {% endif %}
+                <p> {{ name }} </p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
