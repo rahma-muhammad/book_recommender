@@ -59,6 +59,7 @@ Example Screenshots
 
 
 **Example of recommendation results for a given book.**
+
 ![recommendations](images/recommendation.png)
 
 ## Technologies Used
