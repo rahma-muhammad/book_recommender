@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import load_npz
 from scipy.sparse import csr_matrix
 
-path = "data\keywords.csv"
+path = "..\data\keywords.csv"
 def read_data(path):
     data = pd.read_csv(path)
     return data
